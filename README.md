@@ -14,7 +14,7 @@ Makes player teleport when rightclikcing with sugar named "&d‰Amphetamine‰".
 <b>Dupe.sk</b><br>
 Fix llama/donkey dupe by blocking right mouse click with a chest on them.
 <br><br>
-<b>Fireball.sk</b><br>
+<b>Guns.sk</b><br>
 Adds guns and throwable dynamite to the game. Use /givegun <nickname> to give player a gun.
 <br><br>
 <b>Highways.sk</b><br>
