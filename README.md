@@ -19,16 +19,19 @@ Adds guns and throwable dynamite to the game. Use /givegun <nickname> to give pl
 <br><br>
 <b>Highways.sk</b><br>
 Automatic bedrock highways. Automaticly build bedrock roads when player is walking on bedrock, if cooridantes X (between 2 and -1),  Z (between 2 and -1), Y (76). 
-<br>Inventory.sk<br>
-<b></b><br>
-Inventory slot limiter
+<br><br>
+<b>Inventory.sk</b><br>
+Inventory slot limiter to fit chest size.
 <br><br>
 <b>Join.sk</b><br>
 Plays sound when someone joins your server.
 <br><br>
 <b>MakeGood.sk</b><br>
-Kills all monsters, feeds and heals players.
+Kills all monsters, feeds and heals players (/makegood).
 <br><br>
 <b>MakeSay.sk</b><br>
-Makes player say your message.
+Makes player say your message (/makesay <nickname>). 
+<br><br>
+<b>Sneak.sk</b><br>
+Hides player's name tag (/sneak). Requires SkBee. 
 <br><br>
