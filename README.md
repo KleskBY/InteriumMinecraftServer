@@ -18,7 +18,7 @@ Fix llama/donkey dupe by blocking right mouse click with a chest on them.
 Adds guns and throwable dynamite to the game. Use /givegun <nickname> to give player a gun.
 <br><br>
 <b>Highways.sk</b><br>
-Automatic bedrock highways. Automaticly build bedrock roads when player is walking on bedrock, if cooridantes X (between 2 and -1),  Z (between 2 and -1), Y (76). 
+Automatic bedrock highways. Automatically build bedrock roads when the player is walking on bedrock, if coordinates X (between 2 and -1),  Z (between 2 and -1), Y (76). 
 <br><br>
 <b>Inventory.sk</b><br>
 Inventory slot limiter to fit chest size.
