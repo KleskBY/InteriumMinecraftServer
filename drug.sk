@@ -1,0 +1,5 @@
+on rightclick with sugar:
+	name of item is "&d‰Amphetamine‰"
+	cancel event
+	teleport player to block above targeted block
+	remove sugar named "&d‰Amphetamine‰" from player

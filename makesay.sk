@@ -1,0 +1,5 @@
+command /makesay [<player>] [<text>]:
+	permission: op
+	description: Make player say your message
+	trigger:
+		make the arg 1 say arg 2

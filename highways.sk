@@ -1,0 +1,103 @@
+on walking on bedrock:
+	player's y-coordinate is 76:
+		if player's facing is west:
+			player's z-coordinate is less than 2:
+				player's z-coordinate is greater than -1:
+					player's x-coordinate is less than -5:
+						set the block 1 meters west of the block below player to bedrock
+						set the block 1 meters west of the block at player's location to air
+						set the block 1 meters west of the block above player to air
+						set the block 1 meters west of the block above block above player to air
+						set the block 1 meters west of the block above block above block above player to bedrock
+						set the block 2 meters west of the block below player to bedrock
+						set the block 2 meters west of the block at player's location to air
+						set the block 2 meters west of the block above player to air
+						set the block 2 meters west of the block above block above player to air
+						set the block 2 meters west of the block above block above block above player to bedrock
+						set the block 3 meters west of the block below player to bedrock
+						set the block 3 meters west of the block at player's location to air
+						set the block 3 meters west of the block above player to air
+						set the block 3 meters west of the block above block above player to air
+						set the block 3 meters west of the block above block above block above player to bedrock
+						set the block 4 meters west of the block below player to bedrock
+						set the block 4 meters west of the block at player's location to air
+						set the block 4 meters west of the block above player to air
+						set the block 4 meters west of the block above block above player to air
+						set the block 4 meters west of the block above block above block above player to bedrock
+						send action bar "You are on west highway" to player
+		if player's facing is east:
+			player's z-coordinate is less than 2:
+				player's z-coordinate is greater than -1:
+					player's x-coordinate is greater than 5:
+						set the block 1 meters east of the block below player to bedrock
+						set the block 1 meters east of the block at player's location to air
+						set the block 1 meters east of the block above player to air
+						set the block 1 meters east of the block above block above player to air
+						set the block 1 meters east of the block above block above block above player to bedrock
+						set the block 2 meters east of the block below player to bedrock
+						set the block 2 meters east of the block at player's location to air
+						set the block 2 meters east of the block above player to air
+						set the block 2 meters east of the block above block above player to air
+						set the block 2 meters east of the block above block above block above player to bedrock
+						set the block 3 meters east of the block below player to bedrock
+						set the block 3 meters east of the block at player's location to air
+						set the block 3 meters east of the block above player to air
+						set the block 3 meters east of the block above block above player to air
+						set the block 3 meters east of the block above block above block above player to bedrock
+						set the block 4 meters east of the block below player to bedrock
+						set the block 4 meters east of the block at player's location to air
+						set the block 4 meters east of the block above player to air
+						set the block 4 meters east of the block above block above player to air
+						set the block 4 meters east of the block above block above block above player to bedrock
+						send action bar "You are on east highway" to player
+		if player's facing is north:
+			player's x-coordinate is less than 2:
+				player's x-coordinate is greater than -1:
+					player's z-coordinate is less than -5:
+						set the block 1 meters north of the block below player to bedrock
+						set the block 1 meters north of the block at player's location to air
+						set the block 1 meters north of the block above player to air
+						set the block 1 meters north of the block above block above player to air
+						set the block 1 meters north of the block above block above block above player to bedrock
+						set the block 2 meters north of the block below player to bedrock
+						set the block 2 meters north of the block at player's location to air
+						set the block 2 meters north of the block above player to air
+						set the block 2 meters north of the block above block above player to air
+						set the block 2 meters north of the block above block above block above player to bedrock
+						set the block 3 meters north of the block below player to bedrock
+						set the block 3 meters north of the block at player's location to air
+						set the block 3 meters north of the block above player to air
+						set the block 3 meters north of the block above block above player to air
+						set the block 3 meters north of the block above block above block above player to bedrock
+						set the block 4 meters north of the block below player to bedrock
+						set the block 4 meters north of the block at player's location to air
+						set the block 4 meters north of the block above player to air
+						set the block 4 meters north of the block above block above player to air
+						set the block 4 meters north of the block above block above block above player to bedrock
+						send action bar "You are on north highway" to player
+		if player's facing is south:
+			player's x-coordinate is less than 2:
+				player's x-coordinate is greater than -1:
+					player's z-coordinate is greater than 5:
+						set the block 1 meters south of the block below player to bedrock
+						set the block 1 meters south of the block at player's location to air
+						set the block 1 meters south of the block above player to air
+						set the block 1 meters south of the block above block above player to air
+						set the block 1 meters south of the block above block above block above player to bedrock
+						set the block 2 meters south of the block below player to bedrock
+						set the block 2 meters south of the block at player's location to air
+						set the block 2 meters south of the block above player to air
+						set the block 2 meters south of the block above block above player to air
+						set the block 2 meters south of the block above block above block above player to bedrock
+						set the block 3 meters south of the block below player to bedrock
+						set the block 3 meters south of the block at player's location to air
+						set the block 3 meters south of the block above player to air
+						set the block 3 meters south of the block above block above player to air
+						set the block 3 meters south of the block above block above block above player to bedrock
+						set the block 4 meters south of the block below player to bedrock
+						set the block 4 meters south of the block at player's location to air
+						set the block 4 meters south of the block above player to air
+						set the block 4 meters south of the block above block above player to air
+						set the block 4 meters south of the block above block above block above player to bedrock
+						send action bar "You are on south highway" to player
+						

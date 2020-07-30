@@ -1,0 +1,33 @@
+on weather change to rain:
+	set {_num} to random integer between 75 and 140
+	broadcast "&8[&4BLOWOUT&8] &7The Armageddon began. Find a deep hole if you want to survive! It will end in %{_num}% seconds"
+	loop {_num} times:
+		wait for 1 seconds
+		if is clear in "world":
+			broadcast "&8[&4BLOWOUT&8] &7Armageddon is over!"
+			stop
+		else if is raining or thunder in "world": 
+			set {_rand} to random integer between 1 and 5
+			if {_rand} is greater than 4:
+				send action bar "&8[&4ALERT&8] &7Armageddon in progress!" to all players 
+			loop all players:
+				wait for 2 ticks
+				set {_num} to random integer between -12 and 12
+				set {_num2} to random integer between -12 and 12
+				set {_player} to loop-player
+				set {_loc} to location({_player}'s x-coordinate + {_num}, 300, {_player}'s z-coordinate +  {_num2}, {_player}'s world, 0, 90) 
+				set {_v} to vector from {_loc} to location of loop-player
+				set vector length of {_v} to 1
+				if {_num2} is greater than 9:
+					if block above loop-player is air:
+						if block above block above loop-player is air:
+							if block above block above block above loop-player is air:
+								if block above block above block above loop-player is air:
+									if block above block above block above block above loop-player is air:
+										set {_num} to random integer between -15 and 15
+										set {_num2} to random integer between -15 and 15
+										set {_loc} to location({_player}'s x-coordinate + {_num}, {_player}'s y-coordinate, {_player}'s z-coordinate +  {_num2}, {_player}'s world) 
+										strike lightning at {_loc}
+				shoot a fireball  from {_loc} at speed 8 {_v} 
+	set weather in "world" to clear  	        
+	broadcast "&8[&4BLOWOUT&8] &7Armageddon is over!"

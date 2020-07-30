@@ -1,0 +1,71 @@
+on leftclick holding a tnt:
+	cancel event
+	make player shoot a tnt at speed 0.9
+	remove 1 TNT from player's inventory
+
+on rightclick holding a lever:
+	name of item is "&4✮ Rifle&2[&67.62x54&2] &4✮"
+	cancel event
+	
+on join:
+	set {shoot.%player%} to false
+
+on leftclick holding a lever:
+	name of item is "&4✮ Rifle&2[&67.62x54&2] &4✮"
+	if player has 1 gold nugget named "&6✮ 7.62x54 Ammo ✮":
+		if {shoot.%player%} is true:
+			cancel event
+		else:
+			remove gold nugget named "&6✮ 7.62x54 Ammo ✮" from player
+			set {shoot.%player%} to true
+			make player shoot an arrow at speed 8
+#			play sound "entity.lightning_bolt.impact" with volume 0.8
+			send action bar "Reloading[&2.&4.....&7]" to player
+			wait 0.3 second
+			send action bar "Reloading[&2..&4....&7]" to player
+			wait 0.3 second
+			send action bar "Reloading[&2...&4...&7]" to player
+			wait 0.3 second
+			send action bar "Reloading[&2....&4..&7]" to player
+			wait 0.3 second
+			play sound "ui.toast.out" with volume 1
+			send action bar "Reloading[&2.....&4.&7]" to player
+			wait 0.3 second
+			send action bar "Reloading[&2......&7]" to player
+			wait 0.3 second
+			set {shoot.%player%} to false
+			play sound "block.tripwire.click_off" with volume 1
+			
+			send action bar "Ready" to player
+	else:
+		play sound "block.dispenser.fail" with volume 1
+		send action bar "No ammo" to player
+		cancel event
+
+on shoot:
+	shooter is holding a lever:
+		loop 5 times:
+			wait 1 tick
+			create a fake explosion at location of projectile
+
+on projectile hit:
+	if {shoot.%shooter%} is true:
+		delete projectile
+        
+on stepping on pressure plate: 
+	event-block is a golden pressure plate
+	if block below event-block is dragon egg:
+		create an explosion of force 6 at the event-player
+		
+command /givegun [<player>]:
+	permission: op
+	description: Gives gun
+	trigger:
+		give arg 1 lever named "&4✮ Rifle&2[&67.62x54&2] &4✮"
+		give 64 of gold nuggets named "&6✮ 7.62x54 Ammo ✮" to the arg 1 
+		
+#on respawn:
+#	give player lever named "&4✮ Rifle&2[&67.62x54&2] &4✮"
+#	give 64 of gold nuggets named "&6✮ 7.62x54 Ammo ✮" to the player
+#	give 8 of oak planks to the player
+#	give 1 of diamond axe to the player

@@ -1,0 +1,14 @@
+command /good:
+	permission: op
+	description: Make everyone good
+	trigger:
+		send action bar "you feel good" to all players 
+		delete all monsters in the player's world
+		feed all players
+		heal all players
+		
+command /makereload:
+	permission: op
+	description: Make everyone good
+	trigger:
+		execute console command "/reload"

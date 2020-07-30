@@ -1,0 +1,4 @@
+on rightclick on llama or donkey holding a chest:
+	cancel event
+	send action bar "Genial dupe fix by KleskBY" to player
+	

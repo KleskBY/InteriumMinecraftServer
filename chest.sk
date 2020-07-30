@@ -1,0 +1,115 @@
+on death of player:
+	if region at player is not set:
+		if size of items in the inventory of player is greater than 1:
+			if {deathchest.%player%} is set:
+				if {deathchest.%player%} is chest:
+					set block at {deathchest.%player%} to air
+					send "&8[&5INTERIUM&8]&7Your old death chest was destroyed. Items dropped to the ground!" to player
+			if {deathsign.%player%} is set:
+				if {deathsign.%player%} is sign:
+					set block at {deathsign.%player%} to air
+
+			if block at player's location is air or water:
+				set {deathchest.%player%} to block at player's location
+				set block at player's location to chest
+				loop drops:
+					if size of items in the inventory of block at player's location is less than 27:
+						if loop-item is barrier:
+							remove loop-item from drops
+						else:
+							add loop-item to block at player's location's inventory
+							remove loop-item from drops
+				if block above block at player's location is air or water:
+					set block above block at player's location to sign
+					set {deathsign.%player%} to block above block at player's location
+					set line 1 of {deathsign.%player%} to "%player%"
+					set line 2 of {deathsign.%player%} to "died here at"
+					set line 3 of {deathsign.%player%} to "%now%"
+				send "&8[&5INTERIUM&8]&7Chest with your loot at %{deathchest.%player%}'s location%!" to player
+			else:
+				loop blocks in radius 1 around player:
+					if loop-block is air or water:
+						set {deathchest.%player%} to loop-block
+						set loop-block to chest
+						loop drops:
+							if size of items in the inventory of loop-block is less than 27:
+								if loop-item is barrier:
+									remove loop-item from drops
+								else:
+									add loop-item to loop-block's inventory
+									remove loop-item from drops
+						if block above block at player's location is air or water:
+							set block above block at player's location to sign
+							set {deathsign.%player%} to block above block at player's location
+							set line 1 of {deathsign.%player%} to "%player%"
+							set line 2 of {deathsign.%player%} to "died here at"
+							set line 3 of {deathsign.%player%} to "%now%"
+						clear drops
+						send "&8[&5INTERIUM&8]&7Chest with your loot at %loop-block's location%!" to player
+						stop
+		else:
+			remove all barrier named "&c&lHARDCORE" from drops
+			send "&8[&5INTERIUM&8]&7Death chest was not created because you had not enough items!" to player
+	else:
+		remove all barrier named "&c&lHARDCORE" from drops
+		send "&8[&5INTERIUM&8]&7Death chest was not created because you died in the spawn!" to player
+
+
+	  
+on region enter:
+	send action bar "&7You entered to &5%owner of region%'s&7 region!" to player
+
+on region leave:
+	send action bar "&7You left &5%owner of region%'s&7 region!" to player
+
+on quit:
+	if "%owner of region at player%" contains "KleskBY":
+		send "&8[&5INTERIUM&8]&7You sleep in safe zone!" to player
+	else:
+		if size of items in the inventory of player is greater than 1:
+			if block at player's location is air or water:
+				set {sleepchest.%player%} to block at player's location
+				set block at player's location to chest
+				loop all items in the inventory of player:
+					if size of items in the inventory of block at player's location is less than 27:
+						if loop-item is barrier:
+							remove loop-item from player's inventory
+						else:
+							add loop-item to block at player's location's inventory
+							remove loop-item from player's inventory
+				if block above block at player's location is air or water:
+					set block above block at player's location to sign
+					set {sleepsign.%player%} to block above block at player's location
+					set line 1 of {sleepsign.%player%} to "%player%"
+					set line 2 of {sleepsign.%player%} to "sleep here since"
+					set line 3 of {sleepsign.%player%} to "%now%"
+			else:
+				loop blocks in radius 1 around player:
+					if loop-block is air or water:
+						set {sleepchest.%player%} to loop-block
+						set loop-block to chest
+						loop all items in the inventory of player: 
+							if size of items in the inventory of loop-block is less than 27:
+								if loop-item is barrier:
+									remove loop-item from player's inventory
+								else:
+									add loop-item to block at player's location's inventory
+									remove loop-item from player's inventory
+						if block above block at player's location is air or water:
+							set block above block at player's location to sign
+							set {sleepsign.%player%} to block above block at player's location
+							set line 1 of {sleepsign.%player%} to "%player%"
+							set line 2 of {sleepsign.%player%} to "sleep here since"
+							set line 3 of {sleepsign.%player%} to "%now%"
+						stop
+
+on join:
+	if {sleepsign.%player%} is set:
+		if {sleepsign.%player%} is sign:
+			set block at {sleepsign.%player%} to air
+	if {sleepchest.%player%} is set:
+		if {sleepchest.%player%} is chest:
+			loop all items in the inventory of {sleepchest.%player%}: 
+				add loop-item to player's inventory
+				remove loop-item from {sleepchest.%player%}'s inventory
+			set block at {sleepchest.%player%} to air

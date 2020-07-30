@@ -1,0 +1,15 @@
+on join:
+	set {Sneaking.%player%} to false
+
+command /sneak:
+	trigger:
+		if {Sneaking.%player%} is true:
+			set {Sneaking.%player%} to false
+			execute console command "/minecraft:kill @e[type=armor_stand,x=%player's x-coordinate%,y=%player's y-coordinate%,z=%player's z-coordinate%,distance=..3]" 
+			send "&8[&5INTERIUM&8]&7Your are no longer sneaking!" to player
+		else:
+			spawn armor stand at the player's location
+			add "{Invisible:1b,Marker:1b}" to last spawned entity's nbt
+			set {Sneaking.%player%} to true
+			make last spawned entity ride the player
+			send "&8[&5INTERIUM&8]&7Your are now sneaking!" to player

@@ -1,0 +1,5 @@
+on join:
+	loop all players:
+		if {joinnotification.%player%} is not true:
+			play sound "entity.experience_orb.pickup" with volume 1 to loop-player
+				

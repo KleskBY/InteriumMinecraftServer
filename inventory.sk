@@ -1,0 +1,34 @@
+every 20 ticks:
+	loop all players:
+		wait for 1 tick
+		if loop-player's held item is barrier:
+			set the loop-player's tool to air
+		if slot 18 of inventory of loop-player is not barrier:
+			set slot 18 of inventory of loop-player to barrier named "&c&lHARDCORE" 
+		if slot 26 of inventory of loop-player is not barrier:
+			set slot 26 of inventory of loop-player to barrier named "&c&lHARDCORE" 
+		if slot 27 of inventory of loop-player is not barrier:
+			set slot 27 of inventory of loop-player to barrier named "&c&lHARDCORE" 
+		if slot 35 of inventory of loop-player is not barrier:
+			set slot 35 of inventory of loop-player to barrier named "&c&lHARDCORE" 
+		set {_num} to 8
+		loop 9 times:
+			set {_num} to {_num} + 1
+			if slot {_num} of inventory of loop-player is air:
+				set slot {_num} of inventory of loop-player to barrier named "&c&lHARDCORE" 
+
+on rightclick holding a barrier:
+	cancel event
+	set the player's tool to air
+
+#on inventory click: 
+#	if inventory name of current inventory of player is "Crafting":
+#		clicked slot is 18 or 26 or 27 or 35 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 16 or 17:
+#			close player's inventory
+
+on place of a barrier:
+	cancel event
+	set the player's tool to air
+	
+on drop of a barrier:
+    delete event-entity
