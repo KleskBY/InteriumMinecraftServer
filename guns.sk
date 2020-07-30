@@ -19,7 +19,6 @@ on leftclick holding a lever:
 			remove gold nugget named "&6✮ 7.62x54 Ammo ✮" from player
 			set {shoot.%player%} to true
 			make player shoot an arrow at speed 8
-#			play sound "entity.lightning_bolt.impact" with volume 0.8
 			send action bar "Reloading[&2.&4.....&7]" to player
 			wait 0.3 second
 			send action bar "Reloading[&2..&4....&7]" to player
